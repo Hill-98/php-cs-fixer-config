@@ -2,8 +2,8 @@
 
 <a href="https://github.com/Hill-98/php-cs-fixer-config/blob/master/LICENSE"><img alt="MIT" src="https://img.shields.io/github/license/Hill-98/php-cs-fixer-config"></a>
 <a href="https://packagist.org/packages/hill-98/php-cs-fixer-config"><img alt="PHP Version" src="https://img.shields.io/packagist/php-v/hill-98/php-cs-fixer-config"></a>
-<a href="https://packagist.org/packages/hill-98/php-cs-fixer-config"><img alt="Packagist Downloads" src="https://img.shields.io/packagist/dt/Hill-98/php-cs-fixer-config"></a>
-<img alt="Packagist Version" src="https://img.shields.io/packagist/v/Hill-98/php-cs-fixer-config">
+<a href="https://packagist.org/packages/hill-98/php-cs-fixer-config"><img alt="Packagist Downloads" src="https://img.shields.io/packagist/dt/hill-98/php-cs-fixer-config"></a>
+<img alt="Packagist Version" src="https://img.shields.io/packagist/v/hill-98/php-cs-fixer-config">
 
 Based on the [PSR12](https://cs.symfony.com/doc/ruleSets/PSR12.html) rule set to expand
 
