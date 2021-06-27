@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 $__config = $config ?? new PhpCsFixer\Config();
 
 $__rules = array_merge(['@PSR12' => true], require __DIR__.'/rules/general.php');

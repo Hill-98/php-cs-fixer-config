@@ -10,11 +10,12 @@ use PhpCsFixer\Finder;
 use PhpCsFixer\FixerFactory;
 use PHPUnit\Framework\TestCase;
 
-class Test extends TestCase {
+class Test extends TestCase
+{
     /**
      * @dataProvider provideAllRules
      */
-    public function testIfAllRules(string $setName, string $ruleName, array|bool $ruleConfig): void
+    public function testIfAllRules(string $setName, string $ruleName, array | bool $ruleConfig): void
     {
         $factory = new FixerFactory();
         $factory->registerBuiltInFixers();
@@ -60,7 +61,6 @@ class Test extends TestCase {
         $this->assertSame($config->getFinder(), $finder, 'config does not set up Finder');
         unset($config, $finder);
 
-
         define('RISKY', true);
         $config = require __DIR__.'/main.php';
         $this->assertTrue($config->getRiskyAllowed(), 'config does not set up RiskyAllowed');
@@ -75,8 +75,8 @@ class Test extends TestCase {
         $generalRules = require __DIR__.'/rules/general.php';
         $riskyRules = require __DIR__.'/rules/risky.php';
         return [
-            ...array_map(static fn (array|bool $value, string $key) => ['general', $key, $value], $generalRules, array_keys($generalRules)),
-            ...array_map(static fn (array|bool $value, string $key) => ['risky', $key, $value], $riskyRules, array_keys($riskyRules)),
+            ...array_map(static fn (array | bool $value, string $key) => ['general', $key, $value], $generalRules, array_keys($generalRules)),
+            ...array_map(static fn (array | bool $value, string $key) => ['risky', $key, $value], $riskyRules, array_keys($riskyRules)),
         ];
     }
 }
