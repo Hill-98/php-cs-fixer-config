@@ -15,6 +15,6 @@ if (isset($finder)) {
     $__config->setFinder($finder);
 }
 
-$__config->setRules($__rules);
+$__config->setRules(array_merge($__rules, $rules ?? []));
 
 return $__config;
