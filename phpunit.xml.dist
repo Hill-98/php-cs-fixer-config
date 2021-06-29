@@ -5,7 +5,7 @@
          colors="true"
          verbose="true">
     <testsuites>
-        <testsuite name="Rules">
+        <testsuite name="php-cs-fixer-config">
             <file>Test.php</file>
         </testsuite>
     </testsuites>
