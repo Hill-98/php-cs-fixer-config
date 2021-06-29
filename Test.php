@@ -45,29 +45,28 @@ class Test extends TestCase
     public function testConfig(): void
     {
         /** @var ConfigInterface $config */
+        $finder = Finder::create()->in(__DIR__);
+        $rules = ['echo_tag_syntax' => true];
         $config = require __DIR__.'/main.php';
-        $this->assertInstanceOf(ConfigInterface::class, $config, 'config is not ConfigInterface');
-        $this->assertFalse($config->getRiskyAllowed(), 'config has set Riskyallowed');
-        unset($config);
+        $this->assertInstanceOf(ConfigInterface::class, $config, 'Not ConfigInterdace implement');
+        $this->assertFalse($config->getRiskyAllowed(), 'RiskyAllowed already set');
+        $this->assertSame($config->getFinder(), $finder, 'Not set Finder');
+        $this->assertTrue($config->getRules()['echo_tag_syntax'], 'No merge rules');
+        unset($config, $finder, $rules);
 
         $config = new Config();
         $config->setLineEnding("\r\n");
         $config = require __DIR__.'/main.php';
-        $this->assertSame($config->getLineEnding(), "\r\n", 'config does not expand the current config');
+        $this->assertSame($config->getLineEnding(), "\r\n", 'No extend $config');
         unset($config);
-
-        $finder = Finder::create()->in(__DIR__);
-        $config = require __DIR__.'/main.php';
-        $this->assertSame($config->getFinder(), $finder, 'config does not set up Finder');
-        unset($config, $finder);
 
         define('RISKY', true);
         $config = require __DIR__.'/main.php';
-        $this->assertTrue($config->getRiskyAllowed(), 'config does not set up RiskyAllowed');
+        $this->assertTrue($config->getRiskyAllowed(), 'No set RiskyAllowed');
         unset($config);
 
         $config = require __DIR__.'/main.php';
-        $this->assertArrayHasKey('@PSR12', $config->getRules(), 'config rules error');
+        $this->assertTrue($config->getRules()['@PSR12'], 'config rules error');
     }
 
     public function provideAllRules(): array
