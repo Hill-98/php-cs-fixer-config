@@ -20,7 +20,7 @@ You can also go to the [releases](https://github.com/Hill-98/php-cs-fixer-config
 <?php
 
 // Allow Risky rules
-// define('RISKY', true);
+// const RISKY = true;
 
 $finder = PhpCsFixer\Finder::create()
     ->exclude('somedir')

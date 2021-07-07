@@ -1,6 +1,6 @@
 <?php
 
-define('RISKY', true); // Allow Risky rules
+const RISKY = true;
 
 $finder = PhpCsFixer\Finder::create()->in(__DIR__)->exclude('rules');
 
